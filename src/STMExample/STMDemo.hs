@@ -6,14 +6,21 @@ import Control.Concurrent.STM
     ( STM
     , TVar
     , atomically
+    , modifyTVar
     , newTVar
     , readTVar
+    , writeTVar
     )
 
-f :: Int -> STM (TVar Int)
-f x = newTVar $ x * 2
+n :: STM (TVar Int)
+n = newTVar 0
+
+f :: Int -> Int
+f = (* 2)
 
 exec :: Int -> IO Int
 exec x = atomically $ do
-    r <- f x
+    r <- n
+    writeTVar r x
+    modifyTVar r f
     readTVar r
