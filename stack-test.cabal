@@ -17,6 +17,7 @@ library
   hs-source-dirs:      src
   exposed-modules:     Lib
                      , STMExample.NonSTMDemo
+                     , STMExample.NonSTMDemo2
                      , STMExample.Reminders
                      , STMExample.STMDemo
   build-depends:       base >= 4.7 && < 5
