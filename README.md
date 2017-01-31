@@ -1,4 +1,4 @@
 stack-test
 ==========
 
-Haskellとstackについての学習メモ。
+Study notes on Haskell & stack.
