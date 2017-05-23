@@ -17,6 +17,7 @@ library
   hs-source-dirs:      src
   exposed-modules:     Lib
                      , FreeMonad.Example
+                     , FreeMonad.RPNExpr
                      , STMExample.NonSTMDemo
                      , STMExample.NonSTMDemo2
                      , STMExample.Reminders
