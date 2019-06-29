@@ -1,7 +1,7 @@
 module CategoryTheory.Point where
 
-data Point = Point (Double, Double)
-           deriving (Show, Read)
+newtype Point = Point (Double, Double)
+              deriving (Show, Read)
 
 data Triangle = Triangle Point Point Point
               deriving (Show, Read)

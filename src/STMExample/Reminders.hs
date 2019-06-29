@@ -17,7 +17,7 @@ setReminder :: String -> IO ()
 setReminder s = do
     let t = read s :: Int
     printf "OK, I'll remind you in %d seconds\n" t
-    threadDelay $ 10 ^ 6 * t
+    threadDelay $ (10 :: Int) ^ (6 :: Int) * t
     printf "%d seconds is up!\n" t
 
 exec :: IO ()
@@ -26,5 +26,5 @@ exec = loop
     loop = do
         s <- getLine
         unless (s == "exit") $ do
-            forkIO $ setReminder s
+            _ <- forkIO $ setReminder s
             loop

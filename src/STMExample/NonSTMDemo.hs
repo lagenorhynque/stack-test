@@ -4,7 +4,6 @@ module STMExample.NonSTMDemo
 
 import Control.Concurrent
     ( MVar
-    , forkIO
     , modifyMVar_
     , newMVar
     , putMVar
@@ -21,7 +20,7 @@ f = (* 2)
 exec :: Int -> IO Int
 exec x = do
     r <- n
-    takeMVar r
+    _ <- takeMVar r
     putMVar r x
     modifyMVar_ r $ return . f
     readMVar r
